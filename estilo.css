@@ -1,0 +1,222 @@
+/*=================Layout/*=================*/
+
+html, body, .capa{
+    height: 100%; /*Colocando o border do body la pra baixo..pra ficar 100%*/
+}
+
+
+body{
+ 
+    background:url('imagens/capa.png'),/*1ºimagem do background com opacidade clara*/
+               url('imagens/ruido.png'),/*2imagem do background com opacidade mais escura*/
+               linear-gradient(50deg,#ff4169,#7c26f8); /*imagem mudando de cor da Esq/direita*/
+    background-attachment: fixed; /* deixar imagem a msm imagem fixa em toda a pagina.*/
+    font-family: Helvetica,Arial, Helvetica, sans-serif;
+    overflow-x: auto; /*Remove a barra do body INFERIOR , para nao ter que arrastar..ultimos passos*/
+}
+
+
+
+
+
+
+
+/*=================================Barra de navegação=================================*/
+
+.img-logo{
+    height: 40px;
+    width: 132px;
+    display: block;
+    background: url('imagens/spotify.svg') no-repeat;
+    background-size: contain; /* ja deixa a imagem do tamanho do bloco do display acima que colocamos*/
+    color: transparent; /* para esconder o texto spotify que estava escrito atras da imagem*/
+}
+
+nav.navbar-transparente{
+    padding: 15px 0px;
+    background: rgba(0, 0, 0, 0.6);
+    border:none; /*remover a linda da borda da navbar*/
+}
+
+.navbar-brand{
+    padding: 0;
+    padding: 5px 15px;/*deixamos o spotify imagem centralizado. 5sup/inf e 15 nas laterais*/
+}
+
+
+.divisor{
+    width: 1px;
+    height: 16px;
+    background:white;
+    margin: 16px 10px;
+}
+
+/*Inspecionamos os nomes da Navbar e copiamos o codigo do bootstrap de sobreposicao quando passa o mouse*/
+.navbar-inverse .navbar-nav>li>a, footer .nav{
+  color:white
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,footer .nav a:hover{ 
+    color:#9bf0e1;
+    background: none; /*tirar o retangulo branco quando passa o mouse em cima do link la no rodape*/
+  }
+
+  /*=================================IMAGEM DE CAPA=================================*/
+
+
+  .capa{
+      display: table; /* para que fique centralizado verticalmente*/
+      width: 100%; /*para que fique centralizado 100% sem ter que preencher a linha pra centralizar.*/
+  }
+
+  .texto-capa{
+      text-align:center;
+      color:white;
+      display:table-cell;
+      vertical-align: middle;
+  }
+  /*=================================Buttons=================================*/
+
+  .btn-custom{
+      color:white;
+      border-radius: 500px;
+     -webkit-border-radius:500px; /*para que o radius funcione para outros browsers*/
+     -moz-border-radius:500px;
+     /*padding:10px 35px;
+     margin:0px 15px;  Espaço entre os botoes*/
+     text-transform: uppercase;
+     transition: background 0.4s,color 0.4s; /* velocidade da mudanca de cor quando passa o mouse em cima do botao*/
+  }
+
+  .btn-roxo{
+      background:#7c25f8; 
+  }
+
+   .btn-roxo:hover{
+       background-color: #6207e3;
+       color: white;
+  }
+
+  .btn-branco{
+     border:2px solid white;
+  }
+
+  .btn-branco:hover{
+    background-color: white;
+    color: black; /*cor da letra em preto*/
+ }
+
+/*=================================Seção Serviços=================================*/
+
+#servicos{
+    background: white; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.albuns{
+    padding: 10px  0px 10px 0px; /*Espaco entre as imagens do album, criamos a classe albuns para isso.*/
+}
+
+/* -- recursos -- */
+#recursos{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color:white;
+}
+
+.rotacionar{
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg); /* IE 9*/
+    -webkit-transform: rotate(30deg); /*Chrome,Safari, Opera*/
+    padding-left: 80px;   
+}
+
+/* -- Rodape -- */
+footer{
+    background: #000;
+    padding: 50px 0px 20px 0px;
+    position: relative; /*Deixa a parte preta do Rodape em cima da imagem do iphone*/
+}
+
+
+.item-rede-social{
+    float:right;
+}
+
+
+
+  /*=================================Tipografia=================================*/
+
+  h1{
+      /*font-size: 100px; removido para corrigir com media queries*/ 
+      font-weight: 900px;
+      letter-spacing: -0.05em; /*espaço entre as linhas do Musicas para todos*/
+      margin-bottom: 50px;
+  }
+
+  h2{
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      
+  }
+
+  h3{
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+
+  #rodape h4{
+      color:#919496;
+      font-size: 12px;
+      text-transform: uppercase;
+  }
+
+  #servicos h2,#servicos h3{ /*Usamos o ID do servicos e pegamos os h2,h3 dentro de servicos para deixar roxo**/
+      color: #7c25f8;
+  }
+
+  #recursos h3{ /*Usamos o ID do servicos e pegamos os h2,h3 dentro de servicos para deixar roxo**/
+    color:#9bf0e1;
+}
+
+
+
+/*--MEDIA QUERIES--*/
+/*xs  <768 */
+@media screen and  (max-width:767px){
+ h1{
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+ }
+ .btn-custom{
+     margin:10px 15px;
+ }
+}
+
+/* ------sm------*/
+@media screen and (min-width:768px){
+    h1{
+        font-size:70px
+    }
+}
+
+/* ------md------*/
+@media screen and (min-width:992){
+    h1{
+        font-size: 80px;
+
+    }
+}
+
+/* ------LG------*/
+@media screen and (min-width:1200){
+    h1{
+        font-size: 1200px;
+    }
+}
